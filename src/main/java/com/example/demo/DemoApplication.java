@@ -26,6 +26,14 @@ public class DemoApplication {
     }
 
     public static int sum(Integer a, Integer b, Integer c) {            // ejercicio 1
+        if(a == null){
+            a=0;
+        }else if(c == null){
+                c=0;
+            } else if(b == null){
+            b=0;
+        }
+
         Integer result = a + b + c;
         System.out.println("- La suma de los numeros ingresados es: " + result);
         return result;
@@ -56,6 +64,13 @@ public class DemoApplication {
     }
 
     public static int maximumNumber(Integer a, Integer b, Integer c) {      //ejercicio 4
+        if(a == null){
+            a=0;
+        }else if(c == null){
+            c=0;
+        } else if(b == null){
+            b=0;
+        }
         Integer max;
         if (a > b) {
             if (a > c) {
