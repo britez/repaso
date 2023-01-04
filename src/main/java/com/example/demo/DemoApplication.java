@@ -17,7 +17,12 @@ public class DemoApplication {
         productos[1] = new Perecedero("termo", 500, 2);
         productos[2] = new No_perecedero("lapiz", 30, 1);
 
-        System.out.println("el total es "+ Arrays.toString(productos));
+        double total=0;
+        for(int i=0;i<productos.length;i++){
+            total = total + productos[i].calcular(5); //Polimorfismo
+        }
+        //System.out.println("el total es "+ Arrays.toString(productos));
+        System.out.println("el total es "+ total);
 
         Comercial empleadoUno = new Comercial("marta", 5, 3000, 3);
         Comercial empleadoDos = new Comercial("marta", 10, 3000, 3);

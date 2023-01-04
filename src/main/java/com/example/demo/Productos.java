@@ -25,7 +25,7 @@ public class Productos {
     public String toString() {
         return "nombre = " + nombre + ", precio = " + precio;
     }
-    /*public int calcular(int cantidad){
+    public int calcular(int cantidad){
         return precio * cantidad;
-    }*/
+    }
 }
