@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
@@ -12,6 +11,45 @@ public class DemoApplication {
 
     public static void main(String[] args) {
 
+        Productos[] productos = new Productos[3];
+
+        productos[0] = new Productos(" taza", 200);
+        productos[1] = new Perecedero("termo", 500, 2);
+        productos[2] = new No_perecedero("lapiz", 30, 1);
+
+        System.out.println("el total es "+ Arrays.toString(productos));
+
+        Comercial empleadoUno = new Comercial("marta", 5, 3000, 3);
+        Comercial empleadoDos = new Comercial("marta", 10, 3000, 3);
+        Comercial empleadoTres = new Comercial("marta", 15, 3000, 3);
+        Comercial empleadoCuatro = new Comercial("marta", 25, 3000, 3);
+        Comercial empleadoCinco = new Comercial("marta", 30, 3000, 3);
+
+        Repartidor repartidorUno = new Repartidor("juan", 35, 5000, "palermo");
+        Repartidor repartidorDos = new Repartidor("ana", 5, 4000, "palermo");
+
+        Empresa empresa = new Empresa();
+
+        empresa.agregarEmpleado(empleadoUno);
+        empresa.agregarEmpleado(empleadoDos);
+        empresa.agregarEmpleado(empleadoTres);
+        empresa.agregarEmpleado(empleadoCuatro);
+        empresa.agregarEmpleado(empleadoCinco);
+        empresa.agregarEmpleado(repartidorUno);
+        empresa.agregarEmpleado(repartidorDos);
+
+        empresa.receiveList();
+        empresa.mostrarEmpleados();
+
+        System.out.println(empresa.imprimirEmpleado(empleadoUno));
+        System.out.println(empresa.imprimirEmpleado(repartidorUno));
+
+
+
+        //System.out.println(empleadoRepartidor);
+        List<Empleado> comercialArray = Arrays.asList(empleadoUno, empleadoDos, empleadoTres,empleadoCuatro,empleadoCinco, repartidorUno, repartidorDos);
+        Empleado comercialCero = comercialArray.get(0);
+        System.out.println(comercialCero.equals(empleadoUno));
         List<Integer> numbersArray = Arrays.asList(1, 4, 1);
         int[] list = {8, 7, 9, 4, 5, 3, 6};
         int[] numbers = {7, 13, 20, 5, 9, 32, 10, 6};
@@ -22,6 +60,8 @@ public class DemoApplication {
         maximumNumber(3, 4, 1);
         ascendingList(list);
         descendingList(list);
+
+
 
     }
 
